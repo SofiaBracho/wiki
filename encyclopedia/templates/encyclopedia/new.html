@@ -17,14 +17,14 @@
         <div>
             <label for="title">Entry title:</label> 
             <br>
-            <input type="text" name="title" required>
+            <input type="text" name="title" id="title" required>
         </div>
         <br>
         <div>
             <label for="markdown">Content:</label> 
             <br>
-            <textarea required name="markdown" cols="10" rows="3" style="height: 250px;"></textarea>
+            <textarea required name="markdown" id="markdown" spellcheck="false" cols="10" rows="3" style="height: 250px;"></textarea>
         </div>
-        <input type="submit" value="Save">
+        <input type="submit" value="Save" class="btn">
     </form>
 {% endblock %}

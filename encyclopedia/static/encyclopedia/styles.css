@@ -1,6 +1,12 @@
 body {
     margin: 0;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.fg-1 {
+    flex-grow: 1;
 }
 
 code {
@@ -12,27 +18,162 @@ h1 {
     padding-top: 20px;
 }
 
+a {
+    color: #0026ff;
+    transition: .3 ease;
+}   
+a:hover {
+    color: #007bff;
+    text-decoration: none;
+}
+
 textarea {
     height: 90vh;
     width: 80%;
 }
 
-.main {
-    padding: 10px;
+.btn {
+    background: #0026ff;
+    padding: .4rem 1.2rem;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    transition: all .3s ease;
+}
+.btn:hover {
+    background: #007bff;
 }
 
+/* MAIN */
+.row {
+    height: calc(100vh - 80px);
+}
+.main {
+    padding: 1.5rem;
+}
+
+
+/* SIDEBAR */
 .search {
     width: 100%;
     font-size: 15px;
     line-height: 15px;
+    border: none;
+    border-radius: 5px;
+    padding: 4px 1rem;
+    transition: all .3s ease;
+    margin-left: .3rem;
+}
+.search:focus-visible {
+    outline: none;
+    transform: scale(1.05);
+    /* Box shadow from: https://getcssscan.com/css-box-shadow-examples */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .sidebar {
     background-color: #f0f0f0;
     height: 100vh;
     padding: 20px;
+    /* Box shadow from: https://getcssscan.com/css-box-shadow-examples */
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .sidebar h2 {
     margin-top: 5px;
+}
+
+/* SMALLER SCREENS */
+@media screen and (max-width: 767px) {
+    .sidebar {
+        height: fit-content;
+    }
+    .sidebar .links-container {
+        flex-direction: row;
+    }
+    .sidebar .links-container a {
+        margin-right: 1rem;
+    }
+    .sidebar .search {
+        max-width: 15rem;
+
+    }
+}
+
+/* SIDEBAR LINKS */
+/* Fade-out effect from: https://codepen.io/havardob/pen/jOyJzer */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+}
+.links-container a {
+    color: #0026ff;
+    text-decoration: none;
+    transition: .3s ease;
+    margin: 2px;
+}
+.links-container:hover a {
+    color: gray;
+}
+.links-container:hover a:hover {
+    color: #007bff;
+    margin-left: .5rem;
+    transform: scale(1.05);
+}
+
+/* EDIT AND CREATE ENTRY FORMS */
+#title {
+    border: none;
+    border-radius: 5px;
+    padding: 3px 6px;
+    transition: all .3s ease;
+    background: #ececec;
+}
+#title:focus-visible {
+    outline: none;
+    background: white;
+    /* Box shadow from: https://getcssscan.com/css-box-shadow-examples */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px;
+}
+
+textarea#markdown {
+    border: none;
+    border-radius: 5px;
+    padding: 3px 6px;
+    transition: all .3s ease;
+    background: #ececec;
+    resize: none;
+}
+textarea#markdown:focus-visible {
+    outline: none;
+    background: white;
+    /* Box shadow from: https://getcssscan.com/css-box-shadow-examples */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px;
+}
+
+#title-edit{
+    border: none;
+    border-radius: 5px;
+    padding: 3px 6px;
+    background: #ececec;
+}
+#title-edit:focus-visible {
+    outline: none;
+}
+
+/* FOOTER */
+footer.row {
+    background: rgb(167, 167, 167);
+    padding: 1rem 2rem;
+    height: 80px;
+    z-index: 2;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer.row p {
+    margin: 0;
 }

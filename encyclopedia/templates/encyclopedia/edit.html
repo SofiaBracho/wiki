@@ -6,7 +6,7 @@
 
 {% block body %}
 
-    <h1>Write a new entry:</h1>
+    <h1>Edit entry:</h1>
     {% if error %}
         <h4>Error: {{error}}</h4>
     {% endif %}
@@ -16,15 +16,15 @@
         <div>
             <label for="title">Entry title:</label> 
             <br>
-            <input type="text" name="title" id="title" readonly value="{{ entry }}">
+            <input type="text" name="title" id="title-edit" readonly value="{{ entry }}">
         </div>
         <br>
         <div>
             <label for="markdown">Content:</label> 
             <br>
-            <textarea required name="markdown" id="markdown" cols="10" rows="3" style="height: 250px;">{{ content }}</textarea>
+            <textarea required spellcheck="false" name="markdown" id="markdown" cols="10" rows="3" style="height: 250px;">{{ content }}</textarea>
         </div>
-        <input type="submit" value="Save">
+        <input class="btn" type="submit" value="Save">
     </form>
 
 {% endblock %}

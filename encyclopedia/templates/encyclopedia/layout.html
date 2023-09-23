@@ -13,18 +13,12 @@
             <div class="sidebar col-lg-2 col-md-3">
                 <h2>Wiki</h2>
                 <form action="{% url 'search' %}" method="GET">
-                    <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
+                    <input class="search" type="text" name="q" placeholder="Wiki Search">
                 </form>
-                <div>
+                <div class="links-container">
                     <a href="{% url 'index' %}">Home</a>
-                </div>
-                <div>
                     <a href="{% url 'new' %}">Create New Page</a>
-                </div>
-                <div>
-                    <a href="{% url 'entry' 'random' %}?rand=true">
-                        Random Page
-                    </a>
+                    <a href="{% url 'entry' 'random' %}?rand=true">Random Page</a>
                 </div>
                 {% block nav %}
                 {% endblock %}
@@ -34,6 +28,14 @@
                 {% endblock %}
             </div>
         </div>
+
+        <!-- FLEX GROW 1 TO COVER EXTRA SPACE -->
+        <div class="fg-1"></div>
+
+        <footer class="row">
+            <p>Sofia Bracho - CS50 2023 </p>
+            <a href="https://github.com/SofiaBracho">My Github</a>
+        </footer>
 
     </body>
 </html>
